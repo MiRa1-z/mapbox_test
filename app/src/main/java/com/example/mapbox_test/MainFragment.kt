@@ -18,7 +18,7 @@ class MainFragment : Fragment() {
 
     private lateinit var swipePagerAdapter: SwipePagerAdapter
     private lateinit var viewPager: ViewPager2
-
+    var tab_titles = listOf("最新ニュース","スポーツ","社会・事件","クーポン","エンタメ","気象・災害")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,23 +32,20 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val tabLayout = binding.tabLayout
         viewPager = binding.pager
-        Log.d("MainFrag","view")
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Page${(position + 1)}"
-            Log.d("MainFrag","Map${(position + 1)}")
-        }.attach()
-
         swipePagerAdapter = SwipePagerAdapter(this)
         viewPager.adapter = swipePagerAdapter
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = tab_titles[position]
+        }.attach()
     }
 
     class SwipePagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
-        override fun getItemCount() = 20
+        override fun getItemCount() = 10
 
         override fun createFragment(position: Int) = when (position % 2) {
-            0 -> Map1Fragment()
-            1 -> Map2Fragment()
-            else -> Map1Fragment()
+            0 -> Page1Fragment()
+            1 -> Page2Fragment()
+            else -> Page1Fragment()
         }
     }
 }

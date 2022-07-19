@@ -8,12 +8,11 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.mapbox_test.databinding.Page1Binding
-import com.example.mapbox_test.databinding.Page2Binding
 import com.mapbox.maps.MapView
 
 
 
-class Page1Fragment : Fragment() {
+class Page2Fragment : Fragment() {
 
     private lateinit var binding: Page1Binding
 
@@ -25,7 +24,7 @@ class Page1Fragment : Fragment() {
         // Inflate the layout for this fragment
         binding = Page1Binding.inflate(inflater, container, false)
         val webView: WebView = binding.webView
-        webView.loadUrl("https://www.sakigake.jp")
+        webView.loadUrl("https://www.sakigake.jp/ent/")
         return binding.root
     }
 }

@@ -14,15 +14,10 @@
 <!--        mapbox:mapbox_cameraTargetLng="140.102598"-->
 <!--        mapbox:mapbox_cameraZoom="14.0" />-->
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment"
+        android:name="com.example.mapbox_test.MainFragment"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
 
 </LinearLayout>
