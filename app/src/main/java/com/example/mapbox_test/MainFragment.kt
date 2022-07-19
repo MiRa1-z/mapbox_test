@@ -31,12 +31,15 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val tabLayout = binding.tabLayout
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Map ${(position + 1)}"
-        }.attach()
-//        swipePagerAdapter = SwipePagerAdapter(this)
         viewPager = binding.pager
-//        viewPager.adapter = swipePagerAdapter
+        Log.d("MainFrag","view")
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = "Page${(position + 1)}"
+            Log.d("MainFrag","Map${(position + 1)}")
+        }.attach()
+
+        swipePagerAdapter = SwipePagerAdapter(this)
+        viewPager.adapter = swipePagerAdapter
     }
 
     class SwipePagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
