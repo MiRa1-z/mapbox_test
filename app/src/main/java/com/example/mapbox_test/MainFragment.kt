@@ -40,11 +40,15 @@ class MainFragment : Fragment() {
     }
 
     class SwipePagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
-        override fun getItemCount() = 10
+        override fun getItemCount() = 6
 
-        override fun createFragment(position: Int) = when (position % 2) {
+        override fun createFragment(position: Int) = when (position % 6) {
             0 -> Page1Fragment()
             1 -> Page2Fragment()
+            2 -> Page3Fragment()
+            3 -> Page4Fragment()
+            4 -> Page5Fragment()
+            5 -> Page6Fragment()
             else -> Page1Fragment()
         }
     }
