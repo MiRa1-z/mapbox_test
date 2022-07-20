@@ -10,7 +10,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.mapbox_test.databinding.Page1Binding
-import com.mapbox.maps.MapView
+//import com.mapbox.maps.MapView
 
 
 

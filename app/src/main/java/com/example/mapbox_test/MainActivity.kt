@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.example.mapbox_test.databinding.Map2Binding
+//import com.example.mapbox_test.databinding.Map2Binding
 import com.google.android.material.tabs.TabLayoutMediator
-import com.mapbox.maps.MapView
+//import com.mapbox.maps.MapView
 
 
 class MainActivity : AppCompatActivity() {
