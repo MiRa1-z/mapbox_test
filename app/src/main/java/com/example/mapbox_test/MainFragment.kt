@@ -57,28 +57,3 @@ class MainFragment : Fragment() {
         }
     }
 }
-
-class PageFragment : Fragment() {
-
-    private lateinit var binding2: Page1Binding
-    var url_lists = listOf("https://www.sakigake.jp/news/list/ccd/akita/","https://www.sakigake.jp/news/list/scd/100001006/","https://www.sakigake.jp/news/list/scd/100001002/","https://www.sakigake.jp/coupon/","https://www.sakigake.jp/ent/","https://www.sakigake.jp/news/list/scd/100001007/")
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        binding2 = Page1Binding.inflate(inflater, container, false)
-        val webView: WebView = binding2.webView
-        webView.settings.javaScriptEnabled = true
-        webView.webViewClient = object: WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest): Boolean {
-                return false
-            }
-        }
-        webView.loadUrl(url_lists[position])
-        return binding.root
-    }
-
-}
