@@ -39,20 +39,29 @@ class MainFragment : Fragment() {
         swipePagerAdapter = SwipePagerAdapter(this)
         viewPager.adapter = swipePagerAdapter
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = tab_titles[position]
+            tab.text = position.toString() //tab_titles[position]
         }.attach()
     }
 
     class SwipePagerAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
-        override fun getItemCount() = 6
+        override fun getItemCount() = 20
 
-        override fun createFragment(position: Int) = when (position % 6) {
+        override fun createFragment(position: Int) = when (position % 15) {
             0 -> Page1Fragment()
-            1 -> Page2Fragment()
-            2 -> Page3Fragment()
-            3 -> Page4Fragment()
-            4 -> Page5Fragment()
-            5 -> Page6Fragment()
+            1 -> Page1Fragment()
+            2 -> Page1Fragment()
+            3 -> Page1Fragment()
+            4 -> Page1Fragment()
+            5 -> Page1Fragment()
+            6 -> Page1Fragment()
+            7 -> Page1Fragment()
+            8 -> Page1Fragment()
+            9 -> Page1Fragment()
+            10 -> Page1Fragment()
+            11 -> Page1Fragment()
+            12 -> Page1Fragment()
+            13 -> Page1Fragment()
+            14 -> Page1Fragment()
             else -> Page1Fragment()
         }
     }
